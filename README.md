@@ -1,42 +1,39 @@
-# Databases Portfolio
+# Module 01 — Local-first databases
 
-HSBI — Industrial Engineering
+Student: Tunay Daldaban · HSBI Industrial Engineering
 
-## About this portfolio
-This repository documents my learning
-progress in the Databases course.
+## Learning goals
+1. Explain the CBL/PBL course model, portfolio assessment and evolving tasks.
+2. Set up a personal GitHub portfolio from the template with a clean first commit and safe `.gitignore`.
+3. Set up and verify a reproducible `uv` toolchain with fixed Python, SQLite, DuckDB and Datasette.
+4. Explain embedded versus client/server databases with measurements.
+5. Load rows into SQLite and query Python using bound parameters.
+6. Run and verify an LLM-generated SQL query.
 
-## Modules
-- Module 01: Introduction and Local-First Foundations
+Exploration plan: use CNC telemetry to investigate vibration alarms and verify AI-generated time filters.
 
-## Tools
-- Python
-- SQLite
-- DuckDB
-- Git and GitHub
+## Evidence and links
+- [Original learning goals](learning-goals.md)
+- [Discovery answers](discovery.md)
+- [Environment check](uv-check-output.txt)
+- [SQLite shell session](shell-tour.txt)
+- [SQL dump](tour.sql)
+- [Measured SQL results](query-results.md)
+- [AI verification](ai-verification.md)
+- [SQL Island — pending personal completion](sql-island.md)
+- [Reflection draft](reflection.md)
+- [Course syllabus](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/syllabus.md)
+- [Course module index](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/modules/00-index.md)
+- Pod mate portfolio: **[Add real name and repository link.]**
 
-Author: Tunay Daldaban
+## Who are you? — initial portfolio entry
+Programming languages/experience: **[Fill in.]**
+Previous SQL/databases: **[Fill in.]**
+Python, command-line, Git/GitHub experience: **[Fill in.]**
+Web app/server experience: **[Fill in.]**
+Expectations: **[Confirm or edit:]** Learn to store and analyze machine data and judge whether AI-generated SQL is correct.
 
-My partner is Isa Babayev, [portfolio link](https://github.com/isa-babayev-ibabayev/databases-portfolio.git)
-
-In my team for the final project, I also had the following members:
-- <replace these pointy brackets with their full name>, [portfolio link](https://github.com/partner/iot-portfolio)
-- <replace these pointy brackets with their full name>, [portfolio link](https://github.com/partner/iot-portfolio)
-
-Our team final project repository is [here](https://github.com/somewhere/final-iot-project)
-
-My personal profile and expectations, you can find [here](Module01/README.md#task-personal-profile).
-
-## Table of Contents
-
-- [Module 1: IoT Introduction](Module01/README.md), 
-  [Reflection 1](Reflections/ref01.md)
-- [Module 2: Hardware and Basic Electronics](Module02/README.md),
-  [Reflection 2](Reflections/ref02.md), [Reflection 3](Reflections/ref03.md)
-- ...
-
-## Miscellanious
-
-- [Hardware in my/our possession](Hardware/README.md)
-
-
+## Pod and attribution
+Members, contact method and role division: **[Fill in.]**
+Peer review: **[Who checked whose query, and what changed?]**
+Generator and loader: supplied course workbook. Analysis, explanatory drafts and packaging: ChatGPT-assisted. Execution evidence is from the assistant's environment until rerun by the student. No peer collaboration or game completion is claimed.

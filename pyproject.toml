@@ -1,0 +1,6 @@
+[project]
+name = "databases-portfolio"
+version = "0.1.0"
+description = "HSBI Databases portfolio — Tunay Daldaban"
+requires-python = ">=3.14,<3.15"
+dependencies = ["duckdb", "datasette", "sqlite-utils", "pydantic", "sqlalchemy"]

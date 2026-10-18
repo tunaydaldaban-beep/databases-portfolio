@@ -1,0 +1,11 @@
+.venv/
+*.db
+*.db-*
+*.duckdb
+*.duckdb.wal
+*.parquet
+.env
+.env.*
+__pycache__/
+*.pyc
+module-01/telemetry.csv
