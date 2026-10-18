@@ -1,5 +1,3 @@
-# Personal Portfolio for the IoT/MCU class <at university/school>
-
 # Databases Portfolio
 
 HSBI — Industrial Engineering
