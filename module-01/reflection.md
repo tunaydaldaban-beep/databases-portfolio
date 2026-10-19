@@ -1,15 +1,26 @@
-# Reflection — review and personalize before submission
-
-This is an AI-assisted technical draft, not a claim about the student's personal experience.
+# Reflection
 
 ## What worked?
-The prepared generator creates reproducible telemetry. The Python loader uses parameter binding. The analysis compares SQL results with an independent CSV calculation. See the recorded evidence.
+
+I successfully generated the telemetry CSV, loaded 172,800 rows into SQLite and ran the analysis script. The checks passed, and I saved the outputs in my portfolio. Using SQL together with Python gave me more practical experience.
 
 ## What broke?
-A deliberately incorrect LIKE '%18%' filter matched a date containing 18, not just the time. The phrase “overnight” also needs a precise start/end definition. **[Add your own installation or coding difficulties.]**
+
+At first, PowerShell did not recognize uv or sqlite3. After installation and restarting the terminal, both worked. I also had problems with the location of the module-01 folder, which caused a file path error.
+
+The analysis included an intentionally incorrect LIKE '%18%' filter. This showed why matching text in a timestamp is not the same as filtering by time. The meaning of "overnight" also needed a clear time range.
 
 ## How did my mental model shift?
-**[Personalize:]** A database can be a library used directly by a program; a separate database service is not required for this local exercise. Whether a server is useful depends on the workload and access requirements.
+
+I started to see databases as a way to organize information clearly. Tables and columns give the data a structure, and SQL helps select and filter what is needed. This made databases feel less complicated than they looked from the outside.
+
+I already knew a little about SQL and using databases with Python, but this exercise made those connections more practical.
+
 
 ## How did I verify AI suggestions?
-The provided checks execute the SQL, inspect EXPLAIN QUERY PLAN, compare against CSV calculations and test time boundaries. **[Describe the checks you personally reran and understood.]**
+
+I ran the generator, loader, analysis script and SQLite shell tour on my own computer. I reviewed all the checks and worked through the results to understand them, including the comparison between SQL results and independent CSV calculations and the time-boundary tests. When something was unclear, I used ChatGPT to help explain it.
+
+## AI assistance
+
+I used ChatGPT for support where I needed help. I ran the commands myself and reviewed their outputs. The personal observations in this reflection are my own, with AI assistance used to express them in English.
