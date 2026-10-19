@@ -9,3 +9,6 @@ Play https://sql-island.informatik.uni-kl.de/ for about 30 minutes, capture a la
 4. What surprised you; what is still confusing? **[Your experience.]**
 
 Screenshot: add `sql-island-progress.png` here and link it with Markdown.
+## Completion certificate
+
+[SQL Island certificate](Certificate_SQL-Island.pdf)
