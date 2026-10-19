@@ -38,4 +38,6 @@ I used ChatGPT to help formulate SQL queries and explain commands. I ran the que
 
 ## Completion certificate
 
-[SQL Island certificate](Certificate_SQL-Island.pdf)
+[SQL Island certificate](Certificate_SQL-Island.pdf)## Game completion screenshot
+
+![SQL Island completed](sql-island-progress.png)
