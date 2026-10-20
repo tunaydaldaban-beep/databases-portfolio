@@ -1,0 +1,11 @@
+erDiagram
+    MACHINE ||..|{ SENSOR : carries
+    MACHINE {
+        int machine_id PK
+        string site
+    }
+    SENSOR {
+        int sensor_id PK
+        int machine_id FK
+        string kind
+    }

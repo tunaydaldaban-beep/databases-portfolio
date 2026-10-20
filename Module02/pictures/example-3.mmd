@@ -1,0 +1,15 @@
+erDiagram
+    WORK_ORDER ||--o{ ORDER_PART : lists
+    PART ||--o{ ORDER_PART : appears_in
+    WORK_ORDER {
+        int order_id PK
+        date ordered_on
+    }
+    PART {
+        string part_no PK
+        string description
+    }
+    ORDER_PART {
+        int order_id PK, FK
+        string part_no PK, FK
+    }

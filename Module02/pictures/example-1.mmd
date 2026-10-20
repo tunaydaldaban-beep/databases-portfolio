@@ -1,0 +1,11 @@
+erDiagram
+    MACHINE ||--|| NAMEPLATE : has
+    MACHINE {
+        int machine_id PK
+        string site
+    }
+    NAMEPLATE {
+        int machine_id PK, FK
+        string serial_no UK
+        string manufacturer
+    }

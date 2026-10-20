@@ -1,0 +1,17 @@
+erDiagram
+    MACHINE ||..o{ MAINT_JOB : receives
+    TECHNICIAN ||..o{ MAINT_JOB : performs
+    MACHINE {
+        int machine_id PK
+        string serial_no UK
+    }
+    TECHNICIAN {
+        int technician_id PK
+        string name
+    }
+    MAINT_JOB {
+        int job_id PK
+        int machine_id FK
+        int technician_id FK
+        date done_on
+    }

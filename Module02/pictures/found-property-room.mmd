@@ -1,0 +1,10 @@
+erDiagram
+    PROPERTY ||..|{ ROOM : contains
+    PROPERTY {
+        int property_id PK
+        string address
+    }
+    ROOM {
+        int room_id PK
+        int property_id FK
+    }

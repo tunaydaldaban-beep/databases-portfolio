@@ -1,0 +1,11 @@
+erDiagram
+    ARTIST ||..o{ TRACK : records
+    ARTIST {
+        int artistid PK
+        string artistname
+    }
+    TRACK {
+        int trackid PK
+        string trackname
+        int trackartist FK
+    }

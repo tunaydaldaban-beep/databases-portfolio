@@ -1,0 +1,13 @@
+PASS accepted: single CNC
+PASS accepted: single injection
+PASS rejected: unknown subtype (CHECK constraint failed: kind IN ('cnc','injection'))
+PASS rejected: missing required subtype payload (CHECK constraint failed: (kind='cnc' AND axes IS NOT NULL AND axes>=1 AND clamp_tonnes IS NULL)
+    OR (kind='injection' AND clamp_tonnes IS NOT NULL AND clamp_tonnes>0 AND axes IS NULL))
+PASS rejected: both payloads (CHECK constraint failed: (kind='cnc' AND axes IS NOT NULL AND axes>=1 AND clamp_tonnes IS NULL)
+    OR (kind='injection' AND clamp_tonnes IS NOT NULL AND clamp_tonnes>0 AND axes IS NULL))
+PASS accepted: base CNC
+PASS accepted: CNC child
+PASS rejected: overlapping subtype (FOREIGN KEY constraint failed)
+PASS rejected: orphan subtype (FOREIGN KEY constraint failed)
+PASS accepted: base without child demonstrates incomplete coverage
+PASS completeness counterexample: base ID 2 has no subtype row
