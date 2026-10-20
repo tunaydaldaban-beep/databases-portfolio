@@ -1,0 +1,30 @@
+test_duplicate_pair (test_contract.DatabaseTests.test_duplicate_pair) ... ok
+test_duplicate_part (test_contract.DatabaseTests.test_duplicate_part) ... ok
+test_duplicate_serial (test_contract.DatabaseTests.test_duplicate_serial) ... ok
+test_fk_enabled (test_contract.DatabaseTests.test_fk_enabled) ... ok
+test_fractional_cent (test_contract.DatabaseTests.test_fractional_cent) ... ok
+test_many_to_many (test_contract.DatabaseTests.test_many_to_many) ... ok
+test_negative_price (test_contract.DatabaseTests.test_negative_price) ... ok
+test_null_required (test_contract.DatabaseTests.test_null_required) ... ok
+test_orphan_machine (test_contract.DatabaseTests.test_orphan_machine) ... ok
+test_orphan_part (test_contract.DatabaseTests.test_orphan_part) ... ok
+test_orphan_technician (test_contract.DatabaseTests.test_orphan_technician) ... ok
+test_parent_delete (test_contract.DatabaseTests.test_parent_delete) ... ok
+test_sqlalchemy_fk (test_contract.DatabaseTests.test_sqlalchemy_fk) ... ok
+test_text_price (test_contract.DatabaseTests.test_text_price) ... ok
+test_bad_prices (test_contract.ModelTests.test_bad_prices) ... ok
+test_blank_site (test_contract.ModelTests.test_blank_site) ... ok
+test_calendar_date (test_contract.ModelTests.test_calendar_date) ... ok
+test_duplicate_parts (test_contract.ModelTests.test_duplicate_parts) ... ok
+test_missing (test_contract.ModelTests.test_missing) ... ok
+test_positive_id (test_contract.ModelTests.test_positive_id) ... ok
+test_serial (test_contract.ModelTests.test_serial) ... ok
+test_valid (test_contract.ModelTests.test_valid) ... ok
+test_valid_job (test_contract.ModelTests.test_valid_job) ... ok
+test_valid_part (test_contract.ModelTests.test_valid_part) ... ok
+test_valid_technician (test_contract.ModelTests.test_valid_technician) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.048s
+
+OK
