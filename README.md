@@ -1,12 +1,30 @@
 # Databases Portfolio — Tunay Daldaban
 
-HSBI Industrial Engineering
+**Hochschule Bielefeld (HSBI)**  
+**Program:** Industrial Engineering  
+**Course:** Databases
 
-## Modules
+## About this portfolio
 
-- [Module 01 — Local-first databases](module-01/README.md)
+This repository documents my learning progress, practical exercises, SQL experiments, and projects in the Databases course.
 
-## Task pod
+My goal is to understand how databases work, improve my SQL skills, and apply database concepts to real engineering problems.
 
-- Tunay Daldaban
-- [İsa Babayev's portfolio](https://github.com/isa-babayev-ibabayev/databases-portfolio)
+## Course Modules
+
+- [Module 01 — Introduction & Local-First Foundations](module-01/README.md)
+- [Module 02 — Data Contracts & Legacy Schema Audits](Module02/README.md) — upcoming
+
+## Technologies
+
+- Python
+- SQLite
+- DuckDB
+- Datasette
+- Git and GitHub
+
+## Task Pod
+
+My groupmate: İsa Babayev
+
+Portfolio: [İsa Babayev's Databases Portfolio](https://github.com/isa-babayev-ibabayev/databases-portfolio)
