@@ -1,0 +1,28 @@
+-- Orphan job
+SELECT m.job_id, m.machine_name FROM maint_job m LEFT JOIN machine x ON m.machine_name=x.machine_name WHERE x.machine_name IS NULL;
+job_id | machine_name
+3 | cnc-05
+-- Duplicate part
+SELECT part_no, COUNT(*) AS copies FROM part GROUP BY part_no HAVING COUNT(*)>1;
+part_no | copies
+P-1003 | 2
+-- Incorrect lexical comparison
+SELECT part_no,unit_price FROM part WHERE unit_price < '15';
+part_no | unit_price
+P-1001 | 12.50
+-- Numeric comparison for this known fixture (not a general input validator)
+SELECT part_no,unit_price FROM part WHERE CAST(unit_price AS NUMERIC)<15;
+part_no | unit_price
+P-1001 | 12.50
+P-1003 | 9.90
+P-1003 | 9.90
+-- Date shape
+SELECT machine_name,installed FROM machine WHERE installed NOT GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]';
+machine_name | installed
+RANDOM-NAME | unknown
+-- Incorrect join loses multi-part jobs and duplicates job 2
+SELECT j.job_id,p.description FROM maint_job j JOIN part p ON p.part_no=j.parts_used;
+job_id | description
+2 | Coolant filter
+2 | Coolant filter
+3 | Ball bearing 6203

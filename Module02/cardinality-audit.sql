@@ -1,0 +1,11 @@
+SELECT 'machine' AS entity,COUNT(*) AS n FROM machine UNION ALL SELECT 'part',COUNT(*) FROM part UNION ALL SELECT 'maint_job',COUNT(*) FROM maint_job;
+SELECT machine_name,COUNT(*) AS jobs FROM maint_job GROUP BY machine_name;
+SELECT COUNT(DISTINCT technician) AS technicians FROM maint_job;
+SELECT job_id,parts_used,LENGTH(parts_used)-LENGTH(REPLACE(parts_used,',',''))+1 AS n_parts FROM maint_job;
+-- Correct zero count for NULL and empty lists
+SELECT job_id,CASE WHEN parts_used IS NULL OR trim(parts_used)='' THEN 0 ELSE LENGTH(parts_used)-LENGTH(REPLACE(parts_used,',',''))+1 END AS n_parts FROM maint_job;
+WITH RECURSIVE split(job_id,part_no,rest) AS (
+ SELECT job_id,'',COALESCE(parts_used,'')||',' FROM maint_job
+ UNION ALL SELECT job_id,substr(rest,1,instr(rest,',')-1),substr(rest,instr(rest,',')+1) FROM split WHERE rest<>''
+) SELECT part_no,COUNT(DISTINCT job_id) AS jobs FROM split WHERE part_no<>'' GROUP BY part_no;
+SELECT j.job_id,j.machine_name FROM maint_job j LEFT JOIN machine m USING(machine_name) WHERE m.machine_name IS NULL;
