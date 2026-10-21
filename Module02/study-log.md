@@ -56,7 +56,7 @@ erDiagram
     }
 ```
 
-Teaching point: FK existence and NOT NULL answer different questions. A parent can have no tracks. Tunay's own takeaway: **PENDING**.
+My takeaway: I connected this example to a music platform like Spotify. It shows how an artist is linked to multiple tracks through an ID. At first, I also thought it represented albums, but there is no Album entity in this diagram. This helped me distinguish what a model actually includes from what I assume about the application.
 
 ### 2. Property and Room — Mermaid example
 
@@ -75,7 +75,7 @@ erDiagram
     }
 ```
 
-Teaching point: one-or-more participation can be drawn, but a room FK cannot require each property to contain a room. Tunay's own comparison with the first example: **PENDING**.
+My comparison with the first example: This initially reminded me of a property website like Sahibinden. However, the diagram describes properties and their rooms, rather than listings or searches. Like Artist–Track, it uses a one-to-many relationship: one property contains multiple rooms, and each room belongs to one property. I also learned that a foreign key links a room to an existing property, but does not by itself guarantee that every property has a room recorded.
 
 ## Task B — four own examples and proof
 
@@ -89,7 +89,7 @@ I ran the audit and all 25 automated tests on my Windows computer, followed by t
 
 I also had a brief discussion with İsa Babayev about the module. We shared similar impressions about the difficulty of expressing instructions clearly, but we did not review every query or diagram together.
 
-I have not yet recorded individual takeaways from the two sourced ER examples. The neighboring-pod discussion and Discord image share are still pending.
+I reviewed both sourced ER examples and added my takeaways above. The neighboring-pod discussion and Discord image share are still pending.
 
 ## Agreed learning (pod discussion)
 
