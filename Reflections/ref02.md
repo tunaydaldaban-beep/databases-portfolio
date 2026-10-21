@@ -1,33 +1,22 @@
-# Reflection 02 — Data contracts and legacy schemas
-
-**PENDING — TUNAY TO REVIEW AND COMPLETE IN HIS OWN WORDS**
-
-This is a technical preparation draft based on actual assistant execution. It does not claim that Tunay has performed the checks or experienced the observations below.
+# Reflection 02 — Data Contracts and Legacy Schemas
 
 ## Take-away
-
-Technical observation to consider: a table can store data successfully while failing to express relationships. The maintenance fixture contains an orphan, duplicate part records and a comma-separated relationship. Tunay: explain how this changed your understanding, if it did.
+This module helped me better understand how software follows instructions and how databases organize information. It felt a little like teaching someone who knows nothing about the task: we need to explain clearly what is allowed and how things are connected. A database cannot guess our intentions, so the rules we define matter.
 
 ## What was good?
-
-The fixture, SQL audit and contract form a reproducible workflow. All 25 contract tests passed in isolated databases. Tunay: describe what worked when you tried it yourself.
+I ran the audit and tests on my own Windows computer. All 25 tests passed, and the additional inheritance checks also completed successfully. Seeing concrete examples made the connection between the code, the stored data and the rules easier to understand.
 
 ## What was difficult?
-
-The naive join loses the multi-part job and duplicates another job. SQLite affinity and optional participation need more care than a diagram suggests. Tunay: add the part you actually found difficult and how you addressed it.
+The hardest part was translating what I wanted into precise instructions. A rule can sound obvious in everyday language but still need several constraints in the database. Understanding how primary keys, foreign keys and validation work together required careful attention.
 
 ## Exploration and show stoppers
-
-The proposed five-table model separates technician identity and normalizes job parts. Data migration is deliberately deferred because the orphan and unknown date need real decisions. Tunay: add your own questions, experiments and unresolved problems.
+One important lesson from the examples is that a query can run successfully and still produce an incomplete or misleading result. The parts query showed this by leaving out a maintenance job and returning another one twice. This demonstrates why checking the output matters as much as checking whether the code runs.
 
 ## Interaction with peers and instructors
-
-PENDING: actual Module 2 study/pod discussion, neighboring-pod feedback and any instructor interaction. Do not copy the Module 1 meeting as evidence for this activity.
+I discussed the module with my groupmate, İsa Babayev. We talked about our general understanding and had similar impressions about the difficulty of expressing instructions clearly. Our conversation was brief, and we did not carry out a detailed review of each other's queries or diagrams.
 
 ## How did you verify AI suggestions?
-
-The assistant executed the SQL against the original fixture, rebuilt the corrected DDL and ran 25 validation/constraint tests. Results are linked in [Module 2](../Module02/README.md). Tunay: identify which checks you personally reran, what you inspected, and what you can explain from the output.
+I used ChatGPT to help prepare the scripts, diagrams and explanations. I then ran the audit and automated tests locally. These checked examples such as duplicate records, missing references and invalid prices. The successful results provided evidence that the tested rules worked, although passing tests alone does not prove that every possible situation is covered.
 
 ## Help and extra work
-
-ChatGPT prepared the technical implementation and this draft from the workbook and supplied master prompt. Tunay: describe your actual review, changes and any additional sources used. Optional exercises and remaining work are recorded in the [completion report](../Module02/technical-completion-report.md).
+ChatGPT helped with the organizing my comments into this reflection. I also ran the optional EER inheritance examples, which compared a single-table design with separate subtype tables.
