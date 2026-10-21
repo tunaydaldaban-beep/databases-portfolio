@@ -83,13 +83,13 @@ See [er-examples.md](er-examples.md), [SQL proof](sketch-proof.sql) and [execute
 
 ## Task A — personal study record
 
-**PENDING — TUNAY'S PERSONAL INPUT**
+This module helped me understand why software needs clear instructions and explicit rules. The most challenging part was translating an everyday idea into precise database constraints.
 
-- Actual study date, duration and participants:
-- Sources I personally consulted and the concept each clarified:
-- Questions I searched and the sources I used:
-- What surprised me, and what is still unclear:
-- My explanation of the two selected sketches:
+I ran the audit and all 25 automated tests on my Windows computer, followed by the optional EER checks. All completed successfully. I used the prepared module materials and ChatGPT's explanations to support my work.
+
+I also had a brief discussion with İsa Babayev about the module. We shared similar impressions about the difficulty of expressing instructions clearly, but we did not review every query or diagram together.
+
+I have not yet recorded individual takeaways from the two sourced ER examples. The neighboring-pod discussion and Discord image share are still pending.
 
 ## Agreed learning (pod discussion)
 
