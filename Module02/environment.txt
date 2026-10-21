@@ -2,4 +2,4 @@ Python 3.14.8
 SQLite 3.53.1
 Pydantic 2.14.1
 SQLAlchemy 2.1.5
-Platform Linux-6.18.55-x86_64-with-glibc2.39
+Platform Windows-11-10.0.26200-SP0

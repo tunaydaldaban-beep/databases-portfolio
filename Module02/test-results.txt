@@ -25,6 +25,6 @@ test_valid_part (test_contract.ModelTests.test_valid_part) ... ok
 test_valid_technician (test_contract.ModelTests.test_valid_technician) ... ok
 
 ----------------------------------------------------------------------
-Ran 25 tests in 0.048s
+Ran 25 tests in 0.016s
 
 OK
