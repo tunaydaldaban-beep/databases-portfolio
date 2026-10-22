@@ -1,6 +1,6 @@
 # Four ER sketches — Task B
 
-Prepared with AI assistance for Tunay to review and explain. PK = primary key; FK = foreign key; UK = unique key. Solid lines indicate identifying relationships (parent key is part of child identity); dashed lines indicate non-identifying relationships. A diagram can express a business requirement stronger than its SQL implementation.
+PK = primary key; FK = foreign key; UK = unique key. Solid lines indicate identifying relationships (parent key is part of child identity); dashed lines indicate non-identifying relationships. A diagram can express a business requirement stronger than its SQL implementation.
 
 ## 1:1 — machine and nameplate
 
