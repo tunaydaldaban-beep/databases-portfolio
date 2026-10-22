@@ -1,6 +1,6 @@
-# Module 2 study preparation
+# Module 2 study log
 
-**Status:** AI-prepared reference notes and verified technical examples. They are not a record of Tunay having studied, searched, met a pod or posted in Discord. Personal entries below remain pending.
+**Status:** AI-assisted reference notes supplemented with my personal takeaways, Windows execution results, our two-person pod discussion and the Discord post. Sources listed below were consulted during preparation; my personal study record is identified separately.
 
 ## References consulted during preparation
 
@@ -89,7 +89,7 @@ I ran the audit and all 25 automated tests on my Windows computer, followed by t
 
 I also had a brief discussion with İsa Babayev about the module. We shared similar impressions about the difficulty of expressing instructions clearly, but we did not review every query or diagram together.
 
-I reviewed both sourced ER examples and added my takeaways above. The neighboring-pod discussion and Discord image share are still pending.
+I reviewed both sourced ER examples and added my takeaways above. The Discord image share is complete. Discussion took place within our two-person pod (Tunay Daldaban and Isa Babayev). No neighboring pod was available, so the cross-pod activity was not performed.
 
 ## Agreed learning (pod discussion)
 
@@ -103,7 +103,7 @@ Our discussion covered these points:
 - The same modeling approach can describe different domains, such as students and teachers or machines and sensors.
 - A model can become more detailed as the system and its requirements become more complex.
 
-This records our discussion within our own pod. A discussion with a neighboring pod has not yet been documented.
+Discussion took place within our two-person pod (Tunay Daldaban and Isa Babayev). No neighboring pod was available, so the cross-pod activity was not performed.
 
 ## Task C — shared image
 
@@ -113,4 +113,4 @@ The diagram illustrates a one-to-many relationship: one machine can carry severa
 
 [Discord post](https://discord.com/channels/1064132619735928932/1560197797364502559/1562617893227733102)
 
-The image-sharing part is complete. The neighboring-pod discussion remains pending.
+The image-sharing part is complete. No neighboring pod was available for the separate cross-pod activity.

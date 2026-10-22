@@ -4,7 +4,7 @@ Student: Tunay Daldaban · HSBI Industrial Engineering
 
 **Status:** Core technical implementation completed and verified locally on Windows. All 25 automated tests and the optional EER checks passed. The implementation, local execution results and personal reflection have been pushed to GitHub.
 
-The work was prepared with AI assistance. I discussed the module briefly with my groupmate, İsa Babayev. Initial personal study notes have been added. Individual takeaways from the two sourced ER examples, the neighboring-pod discussion and the Discord image share remain pending.
+The work was prepared with AI assistance. Personal study notes, takeaways from both sourced ER examples, a personal reflection, our pod discussion and the Discord image share are documented.
 
 ## Learning goals and evidence
 
@@ -32,7 +32,7 @@ The corrected schema uses five tables, including a separate Technician entity. N
 
 ## Evidence index
 
-- [Study notes and pending pod record](study-log.md)
+- [Study notes and pod discussion](study-log.md)
 - [Legacy setup script](legacy_setup.sql)
 - [Cardinality queries](cardinality-audit.sql) and [results](cardinality-results.txt)
 - [Integrity queries](integrity-audit.sql) and [results](integrity-results.txt)
@@ -44,11 +44,8 @@ The corrected schema uses five tables, including a separate Technician entity. N
 - [Professor's workbook](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/modules/02-data-contracts-and-legacy-schemas.md)
 - Pod mate: [İsa Babayev's portfolio](https://github.com/isa-babayev-ibabayev/databases-portfolio)
 
-## Remaining activities
+## Submission and collaboration note
 
-- Complete personal takeaways from the two sourced ER examples.
-- Review and explain the four relationship sketches and their constraints.
-- Complete the neighboring-pod discussion and record 3–5 agreed lessons.
-- Choose and share one image in the class Discord channel.
+The core technical work, local verification, personal reflection and Discord share are complete. Discussion took place within our two-person pod (Tunay Daldaban and Isa Babayev). No neighboring pod was available, so the cross-pod activity was not performed.
 
-The technical completion report records the original preparation stage; its delivery and personal-progress information still needs updating.
+See the [study log](study-log.md) for discussion points and the [Discord post](https://discord.com/channels/1064132619735928932/1560197797364502559/1562617893227733102) for the shared diagram. Optional Task 4 is included; optional Task 5 was not completed. This status does not claim an instructor waiver or assessment of understanding.

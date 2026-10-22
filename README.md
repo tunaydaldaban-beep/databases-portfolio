@@ -13,7 +13,7 @@ My goal is to understand how databases work, improve my SQL skills, and apply da
 ## Course Modules
 
 - [Module 01 — Introduction & Local-First Foundations](module-01/README.md)
-- [Module 02 — Data Contracts & Legacy Schema Audits](Module02/README.md) — technical evidence ready; personal activities pending
+- [Module 02 — Data Contracts & Legacy Schema Audits](Module02/README.md) — technical work, reflection and Discord share completed; see module collaboration note
 
 ## Technologies
 
