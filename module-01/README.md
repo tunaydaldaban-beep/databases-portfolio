@@ -25,7 +25,7 @@ Exploration plan: use CNC telemetry to investigate vibration alarms and verify A
 - [SQL Island — completed](sql-island.md)
 - [Completion certificate](Certificate_SQL-Island.pdf)
 - [Completion screenshot](sql-island-progress.png)
-- [Personal reflection](reflection.md)
+- [Personal reflection](../Reflections/ref01.md)
 - [Course syllabus](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/syllabus.md)
 - [Course module index](https://github.com/iotempire/iotempire-teaching/blob/main/full-classes/hsbi-databases-10d/modules/00-index.md)
 - [Pod mate portfolio — İsa Babayev](https://github.com/isa-babayev-ibabayev/databases-portfolio)
