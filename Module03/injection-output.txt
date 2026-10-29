@@ -1,0 +1,6 @@
+normal: [(1, 'Customer 1')]
+apostrophe crash: near "Brien": syntax error
+payload: ' OR '1'='1
+unsafe payload: 2000 rows
+safe payload: []
+safe apostrophe: [(2001, "O'Brien")]

@@ -1,0 +1,591 @@
+{
+  "environment": {
+    "python": "3.14.8",
+    "sqlite": "3.53.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "execution": "Executed locally on Tunay Windows computer",
+    "timing": "One connection, no ANALYZE, cached_statements=0, one warm-up then 3 samples, fully fetched rows; short queries batched 30 times"
+  },
+  "counts": {
+    "customer": 2000,
+    "product": 500,
+    "orders": 60000,
+    "order_line": 240000
+  },
+  "dashboard": [
+    [
+      "Bielefeld",
+      500,
+      11242176.0
+    ],
+    [
+      "Gütersloh",
+      500,
+      8422344.0
+    ],
+    [
+      "Münster",
+      500,
+      5493504.0
+    ],
+    [
+      "Paderborn",
+      500,
+      2815656.0
+    ]
+  ],
+  "records": [
+    {
+      "stage": "baseline",
+      "query": "dashboard",
+      "plan": [
+        "SCAN ol",
+        "SEARCH o USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "USE TEMP B-TREE FOR GROUP BY",
+        "USE TEMP B-TREE FOR count(DISTINCT)",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "samples_ms": [
+        126.0148000146728,
+        192.27239998872392,
+        204.8425000102725
+      ],
+      "median_ms": 192.27239998872392,
+      "batch": 1
+    },
+    {
+      "stage": "baseline",
+      "query": "single_day",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        3.504733332859663,
+        3.0267366664096094,
+        3.606936667347327
+      ],
+      "median_ms": 3.504733332859663,
+      "batch": 30
+    },
+    {
+      "stage": "baseline",
+      "query": "wrapped_date",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        6.68534333332597,
+        8.131853332937075,
+        8.30461333389394
+      ],
+      "median_ms": 8.131853332937075,
+      "batch": 30
+    },
+    {
+      "stage": "baseline",
+      "query": "product_filter",
+      "plan": [
+        "SCAN order_line"
+      ],
+      "samples_ms": [
+        9.982156666228548,
+        8.745216666526781,
+        8.35745666602937
+      ],
+      "median_ms": 8.745216666526781,
+      "batch": 30
+    },
+    {
+      "stage": "date only",
+      "query": "dashboard",
+      "plan": [
+        "SCAN ol",
+        "SEARCH o USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "USE TEMP B-TREE FOR GROUP BY",
+        "USE TEMP B-TREE FOR count(DISTINCT)",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "samples_ms": [
+        101.94510000292212,
+        101.92460002144799,
+        102.10979997646064
+      ],
+      "median_ms": 101.94510000292212,
+      "batch": 1
+    },
+    {
+      "stage": "date only",
+      "query": "single_day",
+      "plan": [
+        "SEARCH o USING INDEX ix_orders_ordered_on (ordered_on=?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        0.14561666757799685,
+        0.14908666683671376,
+        0.1457800002147754
+      ],
+      "median_ms": 0.1457800002147754,
+      "batch": 30
+    },
+    {
+      "stage": "date only",
+      "query": "wrapped_date",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        5.570926666647817,
+        6.808633334003389,
+        7.375709999663134
+      ],
+      "median_ms": 6.808633334003389,
+      "batch": 30
+    },
+    {
+      "stage": "date only",
+      "query": "product_filter",
+      "plan": [
+        "SCAN order_line"
+      ],
+      "samples_ms": [
+        9.380740000051446,
+        8.632996666710824,
+        8.62175999985387
+      ],
+      "median_ms": 8.632996666710824,
+      "batch": 30
+    },
+    {
+      "stage": "order only",
+      "query": "dashboard",
+      "plan": [
+        "SCAN ol",
+        "SEARCH o USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "USE TEMP B-TREE FOR GROUP BY",
+        "USE TEMP B-TREE FOR count(DISTINCT)",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "samples_ms": [
+        102.60859999107197,
+        104.73880000063218,
+        116.70600000070408
+      ],
+      "median_ms": 104.73880000063218,
+      "batch": 1
+    },
+    {
+      "stage": "order only",
+      "query": "single_day",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        3.261906667224442,
+        3.031096666624459,
+        2.747303332823018
+      ],
+      "median_ms": 3.031096666624459,
+      "batch": 30
+    },
+    {
+      "stage": "order only",
+      "query": "wrapped_date",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        6.815703333510707,
+        5.529346666298807,
+        5.32387333320609
+      ],
+      "median_ms": 5.529346666298807,
+      "batch": 30
+    },
+    {
+      "stage": "order only",
+      "query": "product_filter",
+      "plan": [
+        "SCAN order_line"
+      ],
+      "samples_ms": [
+        8.493989999988116,
+        8.577483333647251,
+        9.980036666577993
+      ],
+      "median_ms": 8.577483333647251,
+      "batch": 30
+    },
+    {
+      "stage": "product only",
+      "query": "dashboard",
+      "plan": [
+        "SCAN ol",
+        "SEARCH o USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "USE TEMP B-TREE FOR GROUP BY",
+        "USE TEMP B-TREE FOR count(DISTINCT)",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "samples_ms": [
+        109.35959999915212,
+        112.91440000059083,
+        129.64020000072196
+      ],
+      "median_ms": 112.91440000059083,
+      "batch": 1
+    },
+    {
+      "stage": "product only",
+      "query": "single_day",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        2.988539999932982,
+        3.262226666750697,
+        3.0390633328352123
+      ],
+      "median_ms": 3.0390633328352123,
+      "batch": 30
+    },
+    {
+      "stage": "product only",
+      "query": "wrapped_date",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        7.26670666578381,
+        5.626020000393813,
+        5.324603333914031
+      ],
+      "median_ms": 5.626020000393813,
+      "batch": 30
+    },
+    {
+      "stage": "product only",
+      "query": "product_filter",
+      "plan": [
+        "SEARCH order_line USING INDEX ix_orderline_product (product_id=?)"
+      ],
+      "samples_ms": [
+        1.252993334007139,
+        1.2479433333889272,
+        1.2841899995692074
+      ],
+      "median_ms": 1.252993334007139,
+      "batch": 30
+    },
+    {
+      "stage": "date + order",
+      "query": "dashboard",
+      "plan": [
+        "SEARCH o USING INDEX ix_orders_ordered_on (ordered_on>? AND ordered_on<?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH ol USING INDEX ix_orderline_order (order_id=?)",
+        "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "USE TEMP B-TREE FOR GROUP BY",
+        "USE TEMP B-TREE FOR count(DISTINCT)",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "samples_ms": [
+        868.9821000152733,
+        947.6102000044193,
+        867.4437000008766
+      ],
+      "median_ms": 868.9821000152733,
+      "batch": 1
+    },
+    {
+      "stage": "date + order",
+      "query": "single_day",
+      "plan": [
+        "SEARCH o USING INDEX ix_orders_ordered_on (ordered_on=?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        0.16039999997398505,
+        0.15351999997316548,
+        0.14543333284867307
+      ],
+      "median_ms": 0.15351999997316548,
+      "batch": 30
+    },
+    {
+      "stage": "date + order",
+      "query": "wrapped_date",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        5.23609666658255,
+        5.118523333415699,
+        5.196103333340337
+      ],
+      "median_ms": 5.196103333340337,
+      "batch": 30
+    },
+    {
+      "stage": "date + order",
+      "query": "product_filter",
+      "plan": [
+        "SCAN order_line"
+      ],
+      "samples_ms": [
+        8.124063333768087,
+        8.2725466665579,
+        8.150696667144075
+      ],
+      "median_ms": 8.150696667144075,
+      "batch": 30
+    },
+    {
+      "stage": "all three",
+      "query": "dashboard",
+      "plan": [
+        "SEARCH o USING INDEX ix_orders_ordered_on (ordered_on>? AND ordered_on<?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "SEARCH ol USING INDEX ix_orderline_order (order_id=?)",
+        "SEARCH p USING INTEGER PRIMARY KEY (rowid=?)",
+        "USE TEMP B-TREE FOR GROUP BY",
+        "USE TEMP B-TREE FOR count(DISTINCT)",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "samples_ms": [
+        849.8093000089284,
+        802.7511000109371,
+        790.7308000139892
+      ],
+      "median_ms": 802.7511000109371,
+      "batch": 1
+    },
+    {
+      "stage": "all three",
+      "query": "single_day",
+      "plan": [
+        "SEARCH o USING INDEX ix_orders_ordered_on (ordered_on=?)",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        0.179030000193355,
+        0.15221333305817097,
+        0.16512000001966953
+      ],
+      "median_ms": 0.16512000001966953,
+      "batch": 30
+    },
+    {
+      "stage": "all three",
+      "query": "wrapped_date",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)"
+      ],
+      "samples_ms": [
+        5.125043333585684,
+        5.170189999626018,
+        5.233653334047024
+      ],
+      "median_ms": 5.170189999626018,
+      "batch": 30
+    },
+    {
+      "stage": "all three",
+      "query": "product_filter",
+      "plan": [
+        "SEARCH order_line USING INDEX ix_orderline_product (product_id=?)"
+      ],
+      "samples_ms": [
+        1.2753533335247387,
+        1.302393333753571,
+        1.3180533336708322
+      ],
+      "median_ms": 1.302393333753571,
+      "batch": 30
+    }
+  ],
+  "safari": [
+    {
+      "stage": "before",
+      "sql": "SELECT * FROM maint_job WHERE technician='Beier'",
+      "plan": [
+        "SCAN maint_job"
+      ]
+    },
+    {
+      "stage": "before",
+      "sql": "SELECT * FROM machine WHERE machine_name='cnc-02'",
+      "plan": [
+        "SCAN machine"
+      ]
+    },
+    {
+      "stage": "before",
+      "sql": "SELECT * FROM maint_job WHERE technician LIKE '%ei%'",
+      "plan": [
+        "SCAN maint_job"
+      ]
+    },
+    {
+      "stage": "before",
+      "sql": "SELECT * FROM maint_job WHERE lower(technician)='beier'",
+      "plan": [
+        "SCAN maint_job"
+      ]
+    },
+    {
+      "stage": "after",
+      "sql": "SELECT * FROM maint_job WHERE technician='Beier'",
+      "plan": [
+        "SEARCH maint_job USING INDEX ix_job_tech (technician=?)"
+      ]
+    },
+    {
+      "stage": "after",
+      "sql": "SELECT * FROM machine WHERE machine_name='cnc-02'",
+      "plan": [
+        "SCAN machine"
+      ]
+    },
+    {
+      "stage": "after",
+      "sql": "SELECT * FROM maint_job WHERE technician LIKE '%ei%'",
+      "plan": [
+        "SCAN maint_job"
+      ]
+    },
+    {
+      "stage": "after",
+      "sql": "SELECT * FROM maint_job WHERE lower(technician)='beier'",
+      "plan": [
+        "SCAN maint_job"
+      ]
+    }
+  ],
+  "covering": {
+    "SELECT a FROM t WHERE a=1": [
+      "SEARCH t USING COVERING INDEX i (a=?)"
+    ],
+    "SELECT a,b FROM t WHERE a=1": [
+      "SEARCH t USING INDEX i (a=?)"
+    ]
+  },
+  "stretcher": [
+    {
+      "name": "grouped",
+      "sql": "SELECT c.customer_id,c.name,COUNT(*) AS late_orders FROM orders o JOIN customer c ON c.customer_id=o.customer_id WHERE o.status='late' GROUP BY c.customer_id,c.name ORDER BY late_orders DESC,c.customer_id",
+      "plan": [
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "USE TEMP B-TREE FOR GROUP BY",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "rows": 400,
+      "first_rows": [
+        [
+          1,
+          "Customer 1",
+          30
+        ],
+        [
+          6,
+          "Customer 6",
+          30
+        ],
+        [
+          11,
+          "Customer 11",
+          30
+        ]
+      ]
+    },
+    {
+      "name": "correlated",
+      "sql": "SELECT c.customer_id,c.name,(SELECT COUNT(*) FROM orders o WHERE o.customer_id=c.customer_id AND o.status='late') AS late_orders FROM customer c WHERE EXISTS(SELECT 1 FROM orders o WHERE o.customer_id=c.customer_id AND o.status='late') ORDER BY late_orders DESC,c.customer_id",
+      "plan": [
+        "SCAN c",
+        "BLOOM FILTER ON o (customer_id=? AND status=?)",
+        "SEARCH o EXISTS USING AUTOMATIC PARTIAL COVERING INDEX (customer_id=? AND status=?)",
+        "CORRELATED SCALAR SUBQUERY 1",
+        "SCAN o",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "rows": 400,
+      "first_rows": [
+        [
+          1,
+          "Customer 1",
+          30
+        ],
+        [
+          6,
+          "Customer 6",
+          30
+        ],
+        [
+          11,
+          "Customer 11",
+          30
+        ]
+      ]
+    },
+    {
+      "name": "window",
+      "sql": "SELECT DISTINCT c.customer_id,c.name,COUNT(*) OVER(PARTITION BY c.customer_id) AS late_orders FROM orders o JOIN customer c ON c.customer_id=o.customer_id WHERE o.status='late' ORDER BY late_orders DESC,c.customer_id",
+      "plan": [
+        "CO-ROUTINE (subquery-2)",
+        "CO-ROUTINE (subquery-3)",
+        "SCAN o",
+        "SEARCH c USING INTEGER PRIMARY KEY (rowid=?)",
+        "USE TEMP B-TREE FOR ORDER BY",
+        "SCAN (subquery-3)",
+        "SCAN (subquery-2)",
+        "USE TEMP B-TREE FOR DISTINCT",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "rows": 400,
+      "first_rows": [
+        [
+          1,
+          "Customer 1",
+          30
+        ],
+        [
+          6,
+          "Customer 6",
+          30
+        ],
+        [
+          11,
+          "Customer 11",
+          30
+        ]
+      ]
+    }
+  ],
+  "checks": [
+    "Row counts",
+    "Results unchanged across all index stages",
+    "Independent Python dashboard calculation",
+    "Boundary fixture: start/end dates, duplicate lines, customer without orders, order without lines",
+    "All three late-order rewrites agree",
+    "Aggregate WHERE fails; HAVING succeeds"
+  ],
+  "clause_error": "misuse of aggregate: COUNT()"
+}
