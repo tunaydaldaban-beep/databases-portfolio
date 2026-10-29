@@ -18,7 +18,7 @@ Further reading:
 
 ## Materials consulted
 
-The preparation used the course instructions, feedback-round manual, reflection template and existing Module02 setup.  The reference links above provide further reading.
+The preparation used the course instructions, feedback-round manual, reflection template and existing Module02 setup. The reference links above provide further reading.
 
 ## Task prompt and AI assistance
 
@@ -29,6 +29,8 @@ The following prompt comes from the course instructions and was used as the quer
 The SQL in [queries.sql](queries.sql) was prepared with AI assistance and follows the course reference query. The optimization suggestions and AI-provided predictions recorded before the initial execution are in [predictions.md](predictions.md). These are not independent student predictions.
 
 The grouped late-orders query was the default approach. Correlated-subquery and window-function alternatives are recorded in [extra-plans.md](extra-plans.md).
+
+AI also provided explanations and feedback during the relational-algebra practice documented below.
 
 ## Local execution and correctness checks
 
@@ -57,7 +59,7 @@ The benchmark completed these checks successfully:
 - Matching results from grouped, correlated-subquery and window-function reports.
 - An aggregate condition failing in WHERE and succeeding in HAVING.
 
-The small verification dataset includes the start of 2025, the end of 2025, dates outside the year, repeated customers, a customer without orders and an order without lines.
+The small verification dataset checks the start of 2025 and the exclusive start-of-2026 boundary, dates outside the year, repeated customers, a customer without orders and an order without lines.
 
 ### What the dashboard actually counts
 
@@ -108,7 +110,7 @@ A SEARCH is not automatically better than a SCAN.
 
 In the initial recorded experiment, the date index alone left the dashboard plan unchanged. A timing difference without a plan change does not establish that the index improved execution; cache effects and system load can also affect the result.
 
-The current local plans are preserved in benchmark.md for comparison.
+The current local plans are preserved in [benchmark.md](benchmark.md) for comparison.
 
 ### An index is useful for particular queries
 
@@ -173,7 +175,7 @@ SQLite allows some nonstandard uses of aliases, so a SELECT alias in WHERE is no
 
 ## Relational algebra and SQL
 
-### Simple selection
+### Guided practice: simple selection
 
 ```sql
 SELECT *
@@ -183,15 +185,63 @@ WHERE technician = 'Beier';
 
 Relational-algebra expression:
 
-`σ technician='Beier' (maint_job)`
+```text
+σ technician = 'Beier' (maint_job)
+```
 
 Selection keeps the matching rows. SELECT * retains all columns, so a separate projection is unnecessary.
 
-This expression was prepared with AI assistance. My independent expression and comparison are still pending.
+I practised this example with AI guidance. I correctly identified sigma as the selection operator, but initially mixed SQL syntax with relational-algebra notation by including WHERE. With feedback, I completed the condition and table name.
+
+I then practised changing the technician value to 'Tunay'. I initially kept 'Beier' from the previous example and corrected it after feedback:
+
+```text
+σ technician = 'Tunay' (maint_job)
+```
+
+These were guided exercises rather than independent solutions.
+
+### My own attempt after guided practice
+
+After the guided examples, I was given a new query without a step-by-step hint:
+
+```sql
+SELECT *
+FROM maint_job
+WHERE job_id = 5;
+```
+
+My initial answer was:
+
+```text
+sigma job_id = '5' (maint_job)
+```
+
+I chose the selection operator, condition column and table correctly. The feedback concerned the literal: the SQL example uses the numeric value 5, so the corresponding expression should also use 5 without quotes.
+
+Corrected expression:
+
+```text
+σ job_id = 5 (maint_job)
+```
+
+This selects rows whose job_id is 5 and keeps all columns.
+
+### What I learned from the comparison
+
+- Selection, written as σ, filters rows according to a condition.
+- Projection, written as π, selects columns.
+- WHERE is SQL syntax; it is not written inside this relational-algebra notation.
+- Text values such as 'Beier' use quotes, while the numeric value 5 in this example does not.
+- SELECT * keeps all columns, so no separate projection is needed here.
+
+My own attempt is recorded together with its original mistake and the AI feedback. It followed guided practice; it was not a completely unassisted exercise.
 
 ### Dashboard expression
 
-Using extended relational algebra with SQL bag semantics:
+The following extended relational-algebra expression was prepared with AI assistance. It is separate from my own simple-selection attempt above.
+
+Using SQL bag semantics:
 
 1. Join the four tables:
 
@@ -207,11 +257,11 @@ Using extended relational algebra with SQL bag semantics:
 
 4. Select the output columns:
 
-   `π city,customers,revenue (G)`
+   `P = π city,customers,revenue (G)`
 
 5. Sort by revenue descending using the ordering extension:
 
-   `τ revenue DESC`
+   `τ revenue DESC (P)`
 
 Selection corresponds to WHERE, joins to JOIN ON, grouping to GROUP BY, and projection to the SELECT list.
 
@@ -266,12 +316,18 @@ Use bound parameters for values. Placeholders do not replace table or column ide
 
 I discussed the module with İsa. We both found organizing the work and locating small mistakes challenging. This was a general discussion rather than a detailed comparison of our query plans.
 
+Recorded algebra practice:
+
+- Guided selection examples using technician names.
+- My own attempt on a new job_id condition after guided practice.
+- A comparison of my original answer with AI feedback and the corrected expression.
+
 Still to complete:
 
-- My independent relational-algebra attempt and comparison.
 - A comparison of SQLite versions and plans with another pod.
 - The curiosity swaps and feedback notes.
-- Recording any questions actually posted to #sql-questions.
+
+No question posted to #sql-questions is documented here yet.
 
 A question to discuss:
 
